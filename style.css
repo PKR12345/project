@@ -1,0 +1,76 @@
+body{
+	font-family: arial;
+	background: #2575fc;
+  background: -webkit-linear-gradient(left, #6a11cb, #2575fc);
+  background: -o-linear-gradient(left, #6a11cb, #2575fc);
+  background: -moz-linear-gradient(left, #6a11cb, #2575fc);
+  background: linear-gradient(left, #6a11cb, #2575fc);
+  color: white;
+  font-size: 18px;
+  background-attachment: fixed;
+}
+h1{
+	text-align: center;
+	color: white;
+	letter-spacing: 1px;
+}
+button{
+	background-color: transparent;
+	color: white;
+	padding: 9px 20px 9px 20px;
+	border-radius: 20px;
+	border-style: solid;
+	transition: background-color .5s;
+	font-size: 15px;
+	display: block;
+  max-width: 300px;
+  margin: auto;
+}
+button:hover{
+	
+	color:black;
+	 transition: background-color .5s;
+	 background: white;
+
+}
+button:focus{
+	 outline: none;
+}
+.container{
+	margin: 0px 20px 20px 20px;
+	padding-bottom: 20px;
+	background-color: rgba(255, 255, 255, .15);   
+	backdrop-filter: blur(5px);
+	border-radius: 30px;
+	 box-shadow: outset 0 0 2000px rgba(255, 255, 255, .7);
+}
+.data1{
+	
+	padding: 30px 20px 30px 20px;
+	border-radius: 5px;
+	text-align:center;
+}
+.data1 input{
+	margin-right: 50px;
+	margin-left: 4px;
+	background-color: transparent;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	color: white;
+
+}
+.data1 input:focus
+{
+	outline: none;
+	
+	}
+
+.data2 input{
+	margin-left:4px;
+}
+.calc{	
+	 display: block;
+  max-width: 300px;
+  margin: auto;
+}
