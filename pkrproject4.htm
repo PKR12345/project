@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FOOD INTAKE CALCULATION</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>FOOD INTAKE CALCULATION </h1>
+	<div class="container">
+	
+	
+	<br>
+	<div class="data1">	
+	<label>Age:</label>
+	<input type="Number" id="age">
+    <label>Weight:</label>
+	<input type="Number" id="weight">
+	<label>Height:</label>
+	<input type="Number" id="height">
+	</div>
+	<br>
+	<br>
+	<button class="calc" onclick="calc();" align="right">Calculate Daily Intake</button>
+	<br>
+	<p id="id" style="text-align: center;letter-spacing: 1px;"></p>
+	<div class="data1">
+	<label>Amount of carbs:</label>
+	<input type="Number" id="carbs" >
+	
+	<label>Amount of calories:</label>
+	<input type="Number" id="cal" ><br>
+</div>
+<br>
+	<button onclick="calc1();">Todays Intake</button><br>
+    <button onclick="r();" style="padding-left:35px;padding-right: 35px;">New Day</button><br>
+    <p id="id1" style="text-align: center;letter-spacing: 1px;"></p>
+    <p style="text-align: center;letter-spacing: 1px;"> Calories will be added to previous intake until refreshed for newday</p>
+</div>
+</body>
+
+
+
+
+<script>
+var f,w,h,f3,f4,f5,f6,f7,f8,ff;
+function calc()     //calculates total intake,takes input of weight heigth and age
+{
+f=document.getElementById('age').value;
+w=document.getElementById('weight').value;
+h=document.getElementById('height').value;
+if(!f || !w|| !h)
+window.alert("Enter all fields");
+else{
+f5= 10*w+6.25*h-5*f-161;
+f6="Total calorie needed is: "+f5;
+document.getElementById('id').innerHTML=f6;
+}}
+function calc1()  //calculates daily intake after taking calorie as input
+{
+var f3=document.getElementById('carbs').value;
+var f4=document.getElementById('cal').value;
+var ff =window.localStorage.getItem("calorie"); //gets the value of calorie previously stored in local storage
+if(ff)
+{
+f8=Number(ff)+Number(f4);  // adds previous calorie with calorie entered now
+window.localStorage.setItem("calorie",f8);
+f7="Total calorie intake  today is:"+f8;
+document.getElementById('id1').innerHTML=f7;
+}
+else
+{
+f8=f4;
+window.localStorage.setItem("calorie",f4);  //saves amount of calorie to local storage
+f7="Total calorie intake  today is:"+f4;
+document.getElementById('id1').innerHTML=f7;
+}
+var u=f8-f5;
+if(f8>f5)
+window.alert("Exceeded intake by "+ u);
+else
+window.alert("Decreased intake by" + u);
+}
+function r() // makes calorie as zero for new day
+{
+window.localStorage.setItem("calorie",0);
+f7="Total calorie intake  today is: 0";
+document.getElementById('id1').innerHTML=f7;
+}
+
+</script>
+</html>
